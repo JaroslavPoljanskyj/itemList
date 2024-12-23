@@ -22,13 +22,12 @@ const loginUser = (req, res) => {
     // Nastavíme token do cookies
     res.cookie("jwt", token, {
         httpOnly: true, // Zabezpečí token, aby nebyl dostupný přes JavaScript (XSS ochrana)
-        secure: false, // Pouze HTTPS v produkci
+        secure: true, // Pouze HTTPS v produkci
         maxAge: 3600000, // Expirace cookies (1 hodina)
-        sameSite: "strict", // Ochrana proti CSRF
+        sameSite: "none", // Ochrana proti CSRF
     });
 
     // Pošleme úspěšnou odpověď
-    res.status(200).json({ message: "Login successful" });
-};
+    res.status(200).json({ message: "Login successful", token: token });};
 
 export default loginUser;

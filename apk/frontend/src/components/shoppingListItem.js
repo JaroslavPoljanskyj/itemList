@@ -2,11 +2,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Přidáno pro navigaci
 
-const ShoppingListItem = ({ name, author, items, members }) => {
+const ShoppingListItem = ({id, name, author, items, members }) => {
   const navigate = useNavigate(); // Hook pro navigaci
 
   const handleViewClick = () => {
-    navigate(`/shopping-list/${name}`); // Navigace na detail seznamu
+      navigate(`/shopping-list/${id}`);// Navigace na detail seznamu
   };
 
   return (
@@ -37,7 +37,7 @@ const ShoppingListItem = ({ name, author, items, members }) => {
         className="text-blue-500 font-bold" 
         onClick={handleViewClick} // Přidání události kliknutí
       >
-        Zobrazit
+        View more
       </button>
     </div>
   );

@@ -1,7 +1,7 @@
 import lists from '../../mockData/lists.js';
 const addUserToList = (req, res) => {
     const userId = res.locals.user?.id;
-    const { listId } = req.query;
+    const { listId } = req.params;
     const { userId: newUserId, role } = req.body;
 
     // Najdeme seznam

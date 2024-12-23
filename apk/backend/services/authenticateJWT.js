@@ -19,7 +19,7 @@ export const checkUser = (req, res, next) => {
     if (token) {
         jwt.verify(token, process.env.JWT_SECRET || "secret_key", async (err, decodedToken) => {
             if (err) {
-                console.error(err.message);
+                console.error(err.messages);
                 res.locals.user = null;
                 next();
             } else {
@@ -32,4 +32,4 @@ export const checkUser = (req, res, next) => {
         res.locals.user = null;
         next();
     }
-};
+    };
