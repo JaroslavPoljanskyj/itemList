@@ -2,21 +2,21 @@ import jwt from "jsonwebtoken";
 import users from "../../mockData/users.js";
 
 const loginUser = (req, res) => {
-    const { username, password } = req.body;
+    const {username, password} = req.body;
 
     // Najdeme uživatele podle username
     const user = users.find((u) => u.username === username);
-    if (!user) return res.status(404).json({ error: "User not found" });
+    if (!user) return res.status(404).json({error: "User not found"});
 
     // Ověření hesla (pro jednoduchost bez bcrypt)
     const isPasswordValid = password === user.password;
-    if (!isPasswordValid) return res.status(401).json({ error: "Invalid credentials" });
+    if (!isPasswordValid) return res.status(401).json({error: "Invalid credentials"});
 
     // Vytvoříme JWT token
     const token = jwt.sign(
-        { id: user.id },
+        {id: user.id},
         "secret_key",
-        { expiresIn: "1h" }
+        {expiresIn: "1h"}
     );
 
     // Nastavíme token do cookies
@@ -28,6 +28,10 @@ const loginUser = (req, res) => {
     });
 
     // Pošleme úspěšnou odpověď
-    res.status(200).json({ message: "Login successful", token: token });};
-
+    res.status(200).json({
+        message: "Login successful",
+        token: token,
+        userId: user.id
+    });
+}
 export default loginUser;

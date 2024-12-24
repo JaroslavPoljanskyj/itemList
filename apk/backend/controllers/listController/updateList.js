@@ -4,7 +4,7 @@ const updateList = (req, res) => {
     const userId = res.locals.user?.id;
     if (!userId) return res.status(401).json({ error: "User not authenticated" });
 
-    const { listId } = req.query;
+    const { listId } = req.params;
     const list = lists.find(list => list.id === listId);
 
     if (!list) return res.status(404).json({ error: "List not found" });

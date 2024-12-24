@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useUser } from '../Context/UserContext';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { setUserId } = useUser();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,16 +20,17 @@ const Login = () => {
         username,
         password,
       }, {
-        withCredentials: true, // Enable cookies for cross-origin requests
+        withCredentials: true,
       });
 
       if (response.status === 200) {
-        const token = response.data.token;
+        const { token, userId } = response.data;
         // Set the token in cookies with expiration time (e.g., 1 hour)
         const expiration = new Date();
         expiration.setHours(expiration.getHours() + 1);  // Expiry time (1 hour from now)
 
         document.cookie = `jwt=${token}; expires=${expiration.toUTCString()}; path=/; Secure; HttpOnly; SameSite=None`;
+        setUserId(userId);
 
         alert('Přihlášení proběhlo úspěšně!');
         navigate('/shopping-list'); // Redirect to shopping-list

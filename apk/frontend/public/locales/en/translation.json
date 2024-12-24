@@ -1,0 +1,22 @@
+{
+  "loading": "Loading...",
+  "add_new": "Add New",
+  "all": "All",
+  "my": "My Lists",
+  "archived": "Archived",
+  "logout": "Logout",
+  "light_mode": "Light Mode",
+  "dark_mode": "Dark Mode",
+  "no_lists": "No lists available",
+  "items": "Items",
+  "members": "Members",
+  "view_more": "View more",
+  "error": "Error: {error}",
+  "author": "Author:",
+  "delete": "Delete",
+  "leave": "Leave",
+  "filter_by": "Filter by",
+  "done": "Done",
+  "not_done": "Not done",
+  "remove": "Remove"
+}

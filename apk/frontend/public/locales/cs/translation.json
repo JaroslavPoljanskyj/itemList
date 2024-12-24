@@ -1,0 +1,22 @@
+{
+  "loading": "Načítání...",
+  "add_new": "Přidat nový",
+  "all": "Všechny",
+  "my": "Můj seznam",
+  "archived": "Archivováno",
+  "logout": "Odhlásit se",
+  "light_mode": "Světlý režim",
+  "dark_mode": "Tmavý režim",
+  "no_lists": "Žádné seznamy nejsou k dispozici",
+  "items": "Položky",
+  "members": "Členové",
+  "view_more": "Zobrazit více",
+  "error": "Chyba: {error}",
+  "author": "Autor:",
+  "delete": "Smazat",
+  "leave": "Odejít",
+  "filter_by": "Filtrovat dle",
+  "done": "Hotovo",
+  "not_done": "Nehotove",
+  "remove": "Smazat"
+}

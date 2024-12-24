@@ -6,8 +6,8 @@ const lists = [
             { userId: '2', username: 'JaneSmith', role: 'Owner' }
         ],
         items: [
-            { name: 'Milk', description: '2 liters of milk' },
-            { name: 'Bread', description: 'Whole grain bread' }
+            { name: 'Milk', description: '2 liters of milk', isDone: false },
+            { name: 'Bread', description: 'Whole grain bread', isDone: false }
         ]
     },
     {
@@ -18,8 +18,8 @@ const lists = [
             { userId: '3', username: 'AliceBrown', role: 'Owner' }
         ],
         items: [
-            { name: 'Notebook', description: 'A4 notebook for meetings' },
-            { name: 'Pen', description: 'Blue ink pen' }
+            { name: 'Notebook', description: 'A4 notebook for meetings', isDone: false },
+            { name: 'Pen', description: 'Blue ink pen', isDone: false }
         ]
     },
     {
@@ -29,8 +29,8 @@ const lists = [
             { userId: '2', username: 'JaneSmith', role: 'Owner' }
         ],
         items: [
-            { name: 'Tickets', description: 'Flight tickets to Paris' },
-            { name: 'Hotel', description: 'Booking at Hotel Eiffel' }
+            { name: 'Tickets', description: 'Flight tickets to Paris', isDone: false },
+            { name: 'Hotel', description: 'Booking at Hotel Eiffel', isDone: false }
         ]
     },
     {
@@ -40,8 +40,8 @@ const lists = [
             { userId: '3', username: 'AliceBrown', role: 'Owner' }
         ],
         items: [
-            { name: 'Yoga Mat', description: 'Non-slip yoga mat' },
-            { name: 'Dumbbells', description: 'Set of adjustable dumbbells' }
+            { name: 'Yoga Mat', description: 'Non-slip yoga mat', isDone: false },
+            { name: 'Dumbbells', description: 'Set of adjustable dumbbells', isDone: false }
         ]
     },
     {
@@ -51,9 +51,10 @@ const lists = [
             { userId: '2', username: 'JaneSmith', role: 'Member' }
         ],
         items: [
-            { name: 'Book 1', description: 'Learn JavaScript in 24 Hours' },
-            { name: 'Book 2', description: 'Eloquent JavaScript' }
+            { name: 'Book 1', description: 'Learn JavaScript in 24 Hours', isDone: false },
+            { name: 'Book 2', description: 'Eloquent JavaScript', isDone: false }
         ]
     },
 ];
+
 export default lists;
